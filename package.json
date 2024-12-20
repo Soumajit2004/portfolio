@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:cms\"",
+    "dev:client": "npm run dev --workspace=packages/client",
+    "dev:cms": "npm run develop --workspace=packages/cms"
   },
   "keywords": [],
   "workspaces": [
@@ -12,5 +14,8 @@
   ],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
 }
