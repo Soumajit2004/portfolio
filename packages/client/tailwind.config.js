@@ -4,7 +4,11 @@ export default {
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
     ], theme: {
+        container: {
+            DEFAULT: "2rem",
+        },
         extend: {
+
             colors: {
                 'text': '#e1e0ec',
                 'background': '#090813',
