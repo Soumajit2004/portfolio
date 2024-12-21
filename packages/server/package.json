@@ -1,5 +1,5 @@
 {
-  "name": "cms",
+  "name": "server",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -13,7 +13,6 @@
   "dependencies": {
     "@strapi/plugin-cloud": "5.6.0",
     "@strapi/plugin-users-permissions": "5.6.0",
-    "@strapi/provider-upload-aws-s3": "^5.6.0",
     "@strapi/strapi": "5.6.0",
     "mysql2": "3.9.8",
     "react": "^18.0.0",
@@ -32,6 +31,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "15cf1ca5-5262-4a9a-aefc-f0f30327df8a"
+    "uuid": "25e16467-5065-4e0f-89a4-9f07cabf0cbe"
   }
 }
