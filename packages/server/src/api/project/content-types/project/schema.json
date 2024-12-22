@@ -44,6 +44,12 @@
       "required": true,
       "minLength": 50,
       "maxLength": 100
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::technology.technology",
+      "mappedBy": "projects"
     }
   }
 }

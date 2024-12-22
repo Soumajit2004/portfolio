@@ -2,11 +2,12 @@ import "./index.css"
 
 import ReactDOM from "react-dom/client";
 import {BrowserRouter, Route, Routes} from "react-router";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 import RootLayout from "./layouts/root.layout.tsx";
 
-import Home from "./views/home/home.route.tsx";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import HomeView from "./views/home/home.view.tsx";
+import ProjectView from "./views/project.view.tsx";
 
 const root = document.getElementById("root");
 
@@ -18,7 +19,8 @@ ReactDOM.createRoot(root!).render(
       <Routes>
         <Route path="/" element={<RootLayout/>}>
 
-          <Route index element={<Home/>}/>
+          <Route index element={<HomeView/>}/>
+          <Route path={'/projects'} element={<ProjectView/>}/>
 
         </Route>
       </Routes>

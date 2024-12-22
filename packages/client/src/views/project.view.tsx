@@ -1,0 +1,45 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import {fetchAllProjects} from "../api/project.api.ts";
+import {useInfiniteQuery} from "@tanstack/react-query";
+import ProjectCard from "../components/project/project-card.component.tsx";
+import {useInView} from "react-intersection-observer";
+import {useEffect} from "react";
+
+export default function ProjectView() {
+  const {ref, inView} = useInView()
+
+  const {data, fetchNextPage, hasNextPage} = useInfiniteQuery({
+    queryKey: ['all-projects'],
+    queryFn: ({pageParam}) => fetchAllProjects({pageNumber: pageParam}),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => {
+      return lastPage ? (lastPage.pagination.pageCount > lastPage.pagination.page ? lastPage.pagination.page + 1 : undefined) : 1;
+    },
+  });
+
+  const allProjects = data ? data.pages.map((page) => page!.projects).flat() : [];
+
+  useEffect(() => {
+    if (inView) {
+      fetchNextPage().then(() => "next page fetched");
+    }
+  }, [inView]);
+
+  return (
+    <main className={"h-[90vh] bg-background text-white container mx-auto"}>
+      <h1 className={"font-serif text-6xl my-20 sticky top-0"}>Projects</h1>
+
+      <div className="grid gap-8 grid-cols-2 lg:grid-cols-3 ">
+        {
+          data && allProjects.map((project) => (
+            <ProjectCard project={project} key={project.documentId}/>
+          ))
+        }
+      </div>
+
+      <div ref={ref} id={"infinite-scroll-observer"} className={"text-white text-sm w-full flex justify-center"}>
+        {inView && hasNextPage && <p>loading more projects...</p>}
+      </div>
+    </main>
+  );
+}
