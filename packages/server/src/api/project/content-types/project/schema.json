@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "Project"
+    "displayName": "Project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,12 +26,24 @@
       "required": true
     },
     "coverImage": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "liveURL": {
+      "type": "string"
+    },
+    "githubURL": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "minLength": 50,
+      "maxLength": 100
     }
   }
 }
