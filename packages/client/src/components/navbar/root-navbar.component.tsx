@@ -19,7 +19,7 @@ export default function RootNavbar() {
       <div className={"hidden lg:flex gap-4"}>
         {
           routes.map(({name, to}) => (
-            <NavLink to={to} className={"mx-2 underline"}>{name}</NavLink>
+            <NavLink key={to} to={to} className={"mx-2 underline"}>{name}</NavLink>
           ))
         }
       </div>
