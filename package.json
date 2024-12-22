@@ -10,7 +10,7 @@
   "keywords": [],
   "workspaces": [
     "packages/client",
-    "packages/cms"
+    "packages/server"
   ],
   "author": "",
   "license": "ISC",
