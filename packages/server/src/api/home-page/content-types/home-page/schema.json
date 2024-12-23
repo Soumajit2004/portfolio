@@ -16,9 +16,6 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::project.project"
-    },
-    "test": {
-      "type": "string"
     }
   }
 }

@@ -22,9 +22,9 @@ export default function ProjectCard({
         transition: {duration: 0.2}
       }} className={"bg-background border-white border-4 text-white rounded-lg"}>
       <NavLink to={`/projects/${slug}`}>
-        <img className={"rounded-t"} src={coverImage.formats.small.url} alt={coverImage.alternativeText}/>
+        <img className={"rounded-t aspect-video"} src={coverImage.formats.small.url} alt={coverImage.alternativeText}/>
 
-        <div id="card-content" className="p-4 flex flex-col gap-4">
+        <div id="card-content" className="p-4 flex flex-col gap-4 text-left">
 
           <h3 className={"font-serif text-2xl"}>{title}</h3>
 

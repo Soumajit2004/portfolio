@@ -1,7 +1,7 @@
 import axios, {AxiosInstance, AxiosRequestConfig} from "axios";
 
 const axiosParams: AxiosRequestConfig = {
-  baseURL: "http://0.0.0.0:1338",
+  baseURL: "http://0.0.0.0:1338/api",
   headers: {
     "Content-Type": "application/json",
     "Authorization": "Bearer " + import.meta.env.VITE_STRAPI_API_KEY,

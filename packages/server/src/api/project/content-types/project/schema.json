@@ -33,12 +33,6 @@
         "images"
       ]
     },
-    "liveURL": {
-      "type": "string"
-    },
-    "githubURL": {
-      "type": "string"
-    },
     "description": {
       "type": "text",
       "required": true,
@@ -50,6 +44,20 @@
       "relation": "manyToMany",
       "target": "api::technology.technology",
       "mappedBy": "projects"
+    },
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link.link",
+      "mappedBy": "project"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
     }
   }
 }
