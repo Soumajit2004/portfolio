@@ -16,11 +16,14 @@ export default function TechnologiesSection() {
 
       {
         isLoading ? <p className={"text-center my-80"}>loading...</p> :
-          <div className={"grid grid-cols-5 gap-8"}>
+          <div className={"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"}>
             {
               technologies && technologies.map(technology => (
                 <motion.div whileHover={{scale: 1.1}}
-                            className={"border relative overflow-hidden h-32 rounded hover:text-black hover:bg-white transition-colors"}>
+                            draggable
+                            drag
+                            dragSnapToOrigin
+                            className={"border-2 bg-black relative overflow-hidden h-32 rounded hover:text-black hover:bg-white transition-colors"}>
                   <p className={"absolute top-4 left-4"}>{technology.name}</p>
                   <img key={technology.documentId} draggable={"false"} src={technology.icon.url} unselectable={"on"}
                        alt={technology.name}
