@@ -1,19 +1,6 @@
 import {Image} from "./image.type.ts";
-
-interface Technology {
-  id: number
-  name: string
-  documentId: string
-  projects: Project[]
-  icon: Omit<Image, "formats">
-}
-
-interface Link {
-  id: number
-  documentId: string
-  linkType: string
-  url: string
-}
+import {Technology} from "./technology.type.ts";
+import {Link} from "./link.type.ts";
 
 
 interface Project {
