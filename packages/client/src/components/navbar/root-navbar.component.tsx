@@ -13,7 +13,7 @@ export default function RootNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className={"relative bg-background text-white container mx-auto px-2 py-6 flex justify-between"}>
+    <nav className={"relative bg-background text-white container mx-auto py-6 flex justify-between"}>
       <p className={"font-bold"}>Soumajit Ghosh</p>
 
       <div className={"hidden lg:flex gap-4"}>
