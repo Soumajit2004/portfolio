@@ -2,8 +2,8 @@ import api from "./api.ts";
 import {Project} from "../types/project.type.ts";
 
 const URL = {
-  fetchHomepageProject: `/api/home-page`,
-  fetchProjects: `/api/projects`,
+  fetchHomepageProject: `/home-page`,
+  fetchProjects: `/projects`,
 }
 
 export const fetchHomePageProjects = async () => {

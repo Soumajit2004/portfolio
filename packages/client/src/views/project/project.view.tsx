@@ -19,7 +19,7 @@ export default function ProjectView() {
   return (
     <div className={"text-white container mx-auto"}>
       {
-        isLoading ? <p>Loading...</p> :
+        isLoading ? <p className={"text-center my-80 "}>loading...</p> :
           project ? (
             <div className={"my-8 grid grid-cols-3 gap-8"}>
 
@@ -82,7 +82,7 @@ export default function ProjectView() {
               </Markdown>
 
             </div>
-          ) : <p>Project not found</p>
+          ) : <p className={"text-center my-80 "}>project not found</p>
       }
     </div>
   );

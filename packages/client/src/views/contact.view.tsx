@@ -22,6 +22,7 @@ export default function ContactView() {
             prefix="Email"
             field="email"
             errors={state.errors}
+            className={"text-red-500"}
           />
           <textarea
             id="message"
@@ -34,6 +35,7 @@ export default function ContactView() {
             prefix="Message"
             field="message"
             errors={state.errors}
+            className={"text-red-500"}
           />
           <button type="submit" className={"bg-primary rounded py-4"} disabled={state.submitting}>
             {state.submitting ? "Submitting..." : "Submit"}

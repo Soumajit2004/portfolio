@@ -11,6 +11,7 @@ import HomeView from "./views/home/home.view.tsx";
 import AllProjectsView from "./views/project/all-projects.view.tsx";
 import ProjectView from "./views/project/project.view.tsx";
 import ContactView from "./views/contact.view.tsx";
+import AboutView from "./views/about.view.tsx";
 
 const root = document.getElementById("root");
 
@@ -26,6 +27,7 @@ ReactDOM.createRoot(root!).render(
           <Route path={'/projects'} element={<AllProjectsView/>}/>
           <Route path={'/projects/:projectSlug'} element={<ProjectView/>}/>
           <Route path={'/contact'} element={<ContactView/>}/>
+          <Route path={'/about'} element={<AboutView/>}/>
 
         </Route>
       </Routes>
