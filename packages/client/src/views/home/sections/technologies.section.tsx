@@ -1,12 +1,12 @@
 import {useQuery} from "@tanstack/react-query";
-import {fetchAllTechnologies} from "../../../api/technology.api.ts";
 import {motion} from "motion/react";
+import {fetchHomepageTechnologies} from "../../../api/page-content.api.ts";
 
 export default function TechnologiesSection() {
 
   const {data: technologies, isLoading} = useQuery({
     queryKey: ['technologies'],
-    queryFn: fetchAllTechnologies
+    queryFn: fetchHomepageTechnologies
   })
 
   return (
@@ -15,7 +15,7 @@ export default function TechnologiesSection() {
       <h3 className={"mb-10 text-4xl font-serif"}>Tech Stack</h3>
 
       {
-        isLoading ? <p className={"text-center my-80"}>loading...</p> :
+        isLoading ? <p className={"text-center my-40"}>loading...</p> :
           <div className={"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"}>
             {
               technologies && technologies.map(technology => (
