@@ -3,7 +3,7 @@ import {Project} from "../types/project.type.ts";
 
 const URL = {
   fetchHomepageProject: `/api/home-page`,
-  fetchAllProjects: `/api/projects`,
+  fetchProjects: `/api/projects`,
 }
 
 export const fetchHomePageProjects = async () => {
@@ -19,7 +19,7 @@ export const fetchHomePageProjects = async () => {
 }
 
 export const fetchAllProjects = async ({pageNumber = 1}: { pageNumber: number }) => {
-  const response = await api.get(URL.fetchAllProjects, {
+  const response = await api.get(URL.fetchProjects, {
     params: {
       "populate[0]": "coverImage",
       "populate[1]": "technologies",
@@ -31,4 +31,28 @@ export const fetchAllProjects = async ({pageNumber = 1}: { pageNumber: number })
     projects: response.data['data'] as Project[],
     pagination: response.data['meta']["pagination"]
   } : null;
+}
+
+export const fetchProjectBySlug = async (slug: string | undefined) => {
+
+  if (!slug) {
+    return null;
+  }
+
+  const response = await api.get(URL.fetchProjects, {
+    params: {
+      "filters[slug][$eq]": slug,
+      "populate[0]": "coverImage",
+      "populate[1]": "technologies",
+      "populate[4]": "technologies.icon",
+      "populate[2]": "links",
+      "populate[3]": "images"
+    }
+  });
+
+  if (response.data && response.data['data'].length > 0) {
+    return response.data['data'][0] as Project;
+  }
+
+  return null;
 }

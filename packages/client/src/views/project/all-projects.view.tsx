@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {fetchAllProjects} from "../api/project.api.ts";
+import {fetchAllProjects} from "../../api/project.api.ts";
 import {useInfiniteQuery} from "@tanstack/react-query";
-import ProjectCard from "../components/project/project-card.component.tsx";
+import ProjectCard from "../../components/project/project-card.component.tsx";
 import {useInView} from "react-intersection-observer";
 import {useEffect} from "react";
 
-export default function ProjectView() {
+export default function AllProjectsView() {
   const {ref, inView} = useInView()
 
   const {data, fetchNextPage, hasNextPage} = useInfiniteQuery({
@@ -27,7 +27,7 @@ export default function ProjectView() {
 
   return (
     <main className={"bg-background text-white container mx-auto"}>
-      <h1 className={"font-serif text-6xl my-20 sticky top-0"}>All Projects</h1>
+      <h1 className={"font-serif text-4xl my-20 sticky top-0"}>All Projects</h1>
 
       <div className="grid gap-8 grid-cols-2 lg:grid-cols-3 ">
         {
