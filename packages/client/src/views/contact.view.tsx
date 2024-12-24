@@ -28,7 +28,7 @@ export default function ContactView() {
             id="message"
             name="message"
             placeholder={"your message"}
-            rows={20}
+            rows={15}
             className={"bg-primary/50 p-2 rounded"}
           />
           <ValidationError
