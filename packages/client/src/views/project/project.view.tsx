@@ -6,6 +6,7 @@ import remarkBreaks from "remark-breaks";
 import rehypeRaw from "rehype-raw";
 import {Carousel} from "react-responsive-carousel";
 import {motion} from "motion/react";
+import LoadingComponent from "../../components/common/loading.component.tsx";
 
 export default function ProjectView() {
 
@@ -19,7 +20,7 @@ export default function ProjectView() {
   return (
     <div className={"text-white container mx-auto"}>
       {
-        isLoading ? <p className={"text-center my-80 "}>loading...</p> :
+        isLoading ? <LoadingComponent classname={"h-80"} loadingText={"loading project..."}/> :
           project ? (
             <div className={"my-8 grid grid-cols-3 gap-8"}>
 

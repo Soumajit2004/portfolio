@@ -420,6 +420,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     publishedAt: Schema.Attribute.DateTime;
+    resumeFile: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
     technologies: Schema.Attribute.Relation<
       'oneToMany',
       'api::technology.technology'

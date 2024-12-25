@@ -21,3 +21,12 @@ export const fetchHomepageTechnologies = async () => {
   });
   return response.data ? response.data['data']["technologies"] as Technology[] : null;
 }
+
+export const fetchHomepageResumeURL = async () => {
+  const response = await api.get(URL.homePage, {
+    params: {
+      "populate[0]": "resumeFile",
+    }
+  });
+  return response.data ? response.data['data']["resumeFile"]["url"] as string : null;
+}

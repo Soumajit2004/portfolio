@@ -3,6 +3,7 @@ import {useQuery} from "@tanstack/react-query";
 import {fetchAboutMeContent} from "../api/page-content.api.ts";
 import remarkBreaks from "remark-breaks";
 import rehypeRaw from "rehype-raw";
+import LoadingComponent from "../components/common/loading.component.tsx";
 
 export default function AboutView() {
 
@@ -13,7 +14,7 @@ export default function AboutView() {
       <h1 className={"font-serif text-4xl mb-10"}>About Me</h1>
 
       {
-        isLoading && <p className={"h-80"}>loading content...</p>
+        isLoading && <LoadingComponent loadingText={"loading content..."} classname={"h-80"}/>
       }
 
       {
@@ -23,7 +24,8 @@ export default function AboutView() {
       <div className="grid lg:grid-cols-3">
 
         {content &&
-            <Markdown remarkPlugins={[remarkBreaks]} rehypePlugins={[rehypeRaw]} className={"lg:col-span-2 flex flex-col gap-4 text-justify"}>
+            <Markdown remarkPlugins={[remarkBreaks]} rehypePlugins={[rehypeRaw]}
+                      className={"lg:col-span-2 flex flex-col gap-4 text-justify"}>
               {content}
             </Markdown>
         }

@@ -4,12 +4,20 @@ import {motion} from "motion/react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import Donut from 'react-spinning-donut';
+import {fetchHomepageResumeURL} from "../../../api/page-content.api.ts";
+import {useQuery} from "@tanstack/react-query";
 
 export default function HeroSection() {
+
+  const {data: resumeFileLink} = useQuery({
+    queryKey: ['resumeFileLink'],
+    queryFn: fetchHomepageResumeURL
+  })
+
   return (
     <section
       id={"hero"}
-      className={"relative h-lvh max-h-lvh container mx-auto " +
+      className={"relative h-[90vh] container mx-auto " +
         "overflow-x-visible bg-background text-white py-4"}>
 
       <div
@@ -25,7 +33,10 @@ export default function HeroSection() {
         </p>
 
         <div className="flex mt-8 gap-4">
-          <NavLink to="/" className="underline text-md lg:text-lg">download resume</NavLink>
+          <NavLink target={"_blank"} to={resumeFileLink ? resumeFileLink : "/"}
+                   className="underline text-md lg:text-lg">
+            download resume
+          </NavLink>
           <NavLink to="/contact" className="underline text-md lg:text-lg">contact me</NavLink>
         </div>
       </div>
