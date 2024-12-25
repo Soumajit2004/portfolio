@@ -13,7 +13,7 @@ export default function ProjectSection() {
 
   return (
     <section id={"projects"} className={"text-white bg-background container mx-auto"}>
-      <h2 className={"font-serif text-4xl my-10"}>Latest Projects</h2>
+      <h2 className={"font-serif text-3xl md:text-4xl my-10"}>Latest Projects</h2>
 
       {
         isLoading && <LoadingComponent classname={"h-40"} loadingText={"loading projects..."}/>

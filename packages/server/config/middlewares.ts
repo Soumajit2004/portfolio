@@ -14,6 +14,7 @@ export default [
             'blob:',
             'dl.airtable.com',
             'dev-soumajit-portfolio-cms.s3.ap-south-1.amazonaws.com',
+            'soumajit-portfolio-cms.s3.ap-south-1.amazonaws.com',
           ],
           'media-src': [
             "'self'",
@@ -21,6 +22,7 @@ export default [
             'blob:',
             'dl.airtable.com',
             'dev-soumajit-portfolio-cms.s3.ap-south-1.amazonaws.com',
+            'soumajit-portfolio-cms.s3.ap-south-1.amazonaws.com',
           ],
           upgradeInsecureRequests: null,
         },

@@ -13,7 +13,7 @@ export default function TechnologiesSection() {
   return (
     <section id={"technologies"} className={"py-10 text-white container mx-auto"}>
 
-      <h2 className={"mb-10 text-4xl font-serif"}>Tech Stack</h2>
+      <h2 className={"mb-10 text-3xl md:text-4xl font-serif"}>Tech Stack</h2>
 
       {isLoading && <LoadingComponent classname={"h-40"} loadingText={"loading skills..."}/>}
 

@@ -23,7 +23,7 @@ export default function HeroSection() {
       <div
         className={"container absolute left-0 top-[10%] md:top-[20%] xl:top-1/4 max-w-[90%] sm:max-w-[70%] md:max-w-[60%] flex flex-col gap-4 "}>
 
-        <h1 className={"text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif leading-relaxed"}>
+        <h1 className={"text-3xl md:text-4xl font-serif leading-relaxed"}>
           Weaving dreams into code,<br/>
           I craft the web’s silent poetry.
         </h1>

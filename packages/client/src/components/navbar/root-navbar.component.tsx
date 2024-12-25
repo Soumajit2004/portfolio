@@ -39,19 +39,22 @@ export default function RootNavbar() {
                             duration: 0.4,
                             scale: {type: "tween", duration: 0.4},
                           }}
-                          className={"container mx-auto absolute top-20 left-0 z-20 bg-gray-900 flex flex-col w-full"}
+                          className={"absolute top-20 left-0 z-20  w-full"}
               >
                   <ul
-                      className="l">
+                      className="container flex flex-col bg-secondary mx-auto">
                     {
                       routes.map(({name, to}) => (
                         <>
-                          <li className={"py-8 px-2"}>
-                            <NavLink to={to}>{name}</NavLink>
+                          <li className={"py-6 w-full"}>
+                            <NavLink to={to}
+                                     onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {name}
+                            </NavLink>
                           </li>
                           <hr/>
                         </>
-
                       ))
                     }
                   </ul>
