@@ -13,7 +13,7 @@ export default function RootNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className={"bg-background text-white sticky top-0 z-20"}>
+    <div className={"bg-background text-white sticky top-0 z-50"}>
       <nav className={" container mx-auto py-6 flex justify-between"}>
         <p className={"font-bold"}>Soumajit Ghosh</p>
 

@@ -31,7 +31,7 @@ export default function ProjectSection() {
 
 
       {
-        projects && <Carousel className={"w-full md:hidden"}>
+        projects && <Carousel className={"w-full md:hidden"} autoPlay infiniteLoop>
           {
             projects.map((project: Project) => (
               <ProjectCard key={project.documentId} project={project}/>

@@ -9,7 +9,7 @@ import {useQuery} from "@tanstack/react-query";
 
 export default function HeroSection() {
 
-  const {data: resumeFileLink} = useQuery({
+  const {data: resumeFileLink, isLoading} = useQuery({
     queryKey: ['resumeFileLink'],
     queryFn: fetchHomepageResumeURL
   })
@@ -32,10 +32,10 @@ export default function HeroSection() {
           I’m a web developer—fluent in React, Node.js and the art of Googling errors faster than they appear.
         </p>
 
-        <div className="flex mt-8 gap-4">
+        <div className="flex mt-8 gap-4 z-20">
           <NavLink target={"_blank"} to={resumeFileLink ? resumeFileLink : "/"}
                    className="underline text-md lg:text-lg">
-            download resume
+            {isLoading ? "loading..." : "download resume"}
           </NavLink>
           <NavLink to="/contact" className="underline text-md lg:text-lg">contact me</NavLink>
         </div>

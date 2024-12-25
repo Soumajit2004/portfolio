@@ -29,7 +29,7 @@ export default function TechnologiesSection() {
               <p className={"absolute top-4 left-4"}>{technology.name}</p>
               <img key={technology.documentId} draggable={"false"} src={technology.icon.url} unselectable={"on"}
                    alt={technology.name}
-                   className={"aspect-square h-40 absolute top-0-1/2 -right-1/4"}/>
+                   className={"aspect-square h-40 absolute top-0-1/2 -right-[10%]"}/>
             </motion.div>
           ))
         }
