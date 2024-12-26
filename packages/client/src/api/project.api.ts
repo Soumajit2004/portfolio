@@ -45,7 +45,7 @@ export const fetchProjectBySlug = async (slug: string | undefined) => {
       "populate[0]": "coverImage",
       "populate[1]": "technologies",
       "populate[4]": "technologies.icon",
-      "populate[2]": "links",
+      "populate[2]": "externalLinks",
       "populate[3]": "images"
     }
   });

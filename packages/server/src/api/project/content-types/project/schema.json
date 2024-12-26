@@ -45,19 +45,18 @@
       "target": "api::technology.technology",
       "mappedBy": "projects"
     },
-    "links": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::link.link",
-      "mappedBy": "project"
-    },
     "images": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "externalLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.link"
     }
   }
 }

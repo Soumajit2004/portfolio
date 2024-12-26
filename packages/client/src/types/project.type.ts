@@ -15,7 +15,7 @@ interface Project {
   githubURL: string
   liveURL: string
   technologies: Technology[]
-  links: Link[]
+  externalLinks: Link[]
   images: Image[]
 
   createdAt: string

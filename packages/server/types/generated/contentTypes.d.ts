@@ -431,45 +431,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiLinkLink extends Struct.CollectionTypeSchema {
-  collectionName: 'links';
-  info: {
-    description: '';
-    displayName: 'Link';
-    pluralName: 'links';
-    singularName: 'link';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    linkType: Schema.Attribute.Enumeration<
-      [
-        'github',
-        'demo',
-        'linkedin',
-        'twitter',
-        'instagram',
-        'upwork',
-        'video demo',
-      ]
-    > &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::link.link'> &
-      Schema.Attribute.Private;
-    project: Schema.Attribute.Relation<'manyToOne', 'api::project.project'>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -493,8 +454,8 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
         maxLength: 100;
         minLength: 50;
       }>;
+    externalLinks: Schema.Attribute.Component<'links.link', true>;
     images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
-    links: Schema.Attribute.Relation<'oneToMany', 'api::link.link'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1055,7 +1016,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::home-page.home-page': ApiHomePageHomePage;
-      'api::link.link': ApiLinkLink;
       'api::project.project': ApiProjectProject;
       'api::technology.technology': ApiTechnologyTechnology;
       'plugin::content-releases.release': PluginContentReleasesRelease;

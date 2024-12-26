@@ -1,7 +1,6 @@
 interface Link {
   id: number
-  documentId: string
-  linkType: string
+  linkName: string
   url: string
 }
 

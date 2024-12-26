@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:cms\"",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "npm run dev --workspace=packages/client",
-    "dev:cms": "npm run develop --workspace=packages/server"
+    "dev:server": "npm run develop --workspace=packages/server"
   },
   "keywords": [],
   "workspaces": [

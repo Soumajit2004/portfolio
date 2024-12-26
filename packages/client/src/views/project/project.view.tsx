@@ -46,9 +46,9 @@ export default function ProjectView() {
                 <div id="links" className="flex flex-col gap-4 bg-secondary/50 p-4 rounded">
                   <h3 className={"text-2xl font-serif"}>External Links</h3>
                   {
-                    project.links.map(link => (
+                    project.externalLinks.map(link => (
                       <NavLink target={"_blank"} to={link.url} key={link.id} className="underline text-sm lg:text-md">
-                        {link.linkType}
+                        {link.linkName}
                       </NavLink>
                     ))
                   }
