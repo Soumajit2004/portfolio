@@ -4,13 +4,12 @@ import TechnologiesSection from "./sections/technologies.section.tsx";
 
 export default function HomeView() {
   return (
-    <main className={"overflow-x-hidden w-screen"}>
+    <main className={"overflow-x-hidden "}>
       <HeroSection/>
 
       <TechnologiesSection/>
 
       <ProjectSection/>
-
     </main>
   );
 }

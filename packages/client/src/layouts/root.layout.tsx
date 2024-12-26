@@ -4,11 +4,8 @@ import RootFooter from "../components/footer/root-footer.component.tsx";
 
 export default function RootLayout() {
   return (
-    <main className={"font-mono max-w-full overflow-x-hidden"}>
-      <>
-        <RootNavbar/>
-        <hr/>
-      </>
+    <main className={"relative font-mono w-full"}>
+      <RootNavbar/>
 
       <Outlet/>
 

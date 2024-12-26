@@ -28,7 +28,7 @@ export default function ProjectCard({
 
           <h3 className={"font-serif text-2xl"}>{title}</h3>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             {
               technologies.map(({id, name}) => (
                 <motion.div whileHover={{

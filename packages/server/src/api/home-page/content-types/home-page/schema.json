@@ -21,6 +21,14 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::technology.technology"
+    },
+    "resumeFile": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
